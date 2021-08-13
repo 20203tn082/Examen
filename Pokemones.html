@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pokemones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body onload="findDatas()">
+<div id="content">
+    <br>
+    <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#create" onclick="findPokemones()"> Crear</button>
+    <br>
+    <div>
+        <table class="table">
+            <thead class="table-dark">
+            <th>Nombre</th>
+            <th>Primer apellido</th>
+            <th>Segundo apellido</th>
+            <th>Pokemón favorito</th>
+            <th>Acciones</th>
+            </thead>
+            <tbody id="body"></tbody>
+        </table>
+
+    </div>
+    <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form"></form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
+                    <button type="button" class="btn btn-outline-success btn-sm" onclick="create();">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Eliminar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id">
+                <label>¿Está seguro de querer eliminar a <span id="nombre"></span> ?</label>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
+                <button type="button" class="btn btn-outline-success btn-sm" onclick="deleteUser();">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Actualizar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id1">
+                <label>Nombre:</label>
+                <input class="form-control" type="text" name="nombre"  id="nombre1">
+                <br>
+                <label>Apellido Paterno:</label>
+                <input class="form-control" type="text" name="apellidoP"  id="apellidoPa1">
+                <br>
+                <label>Apellido Materno:</label>
+                <input class="form-control" type="text" name="apellidoM"  id="apellidoMa1">
+                <br>
+                <label>Pokemón favorito:</label>
+                <select class="form-select" name="type" id="pokemon1">
+                </select>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
+                <button type="button" class="btn btn-outline-success btn-sm" onclick="modifyUser();">Modificar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<script src="../assets/dist/js/main.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+</body>
+</html>
